@@ -30,7 +30,7 @@ label {
   padding: 10px 0;
 }
 
-img {
+div.column-half > img {
   width: 100%;
 }
 
@@ -44,4 +44,16 @@ button {
 
 .row.button {
   justify-content: right;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding-bottom: 20px;
+}
+
+img.entry {
+  object-fit: cover;
 }
