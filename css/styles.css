@@ -3,8 +3,18 @@
   background-color: lightgray;
 }
 
-.row.title {
+.container.top {
   background-color: purple;
+  padding: 5px 0;
+}
+
+header {
+  margin-bottom: 0;
+}
+
+h2 {
+  color: white;
+  padding-left: 20px;
 }
 
 label,
