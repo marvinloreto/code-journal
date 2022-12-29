@@ -1,0 +1,47 @@
+.container {
+  font-family: "Courier New", Courier, monospace;
+  background-color: lightgray;
+}
+
+.container.top {
+  background-color: purple;
+  padding: 5px 0;
+}
+
+header {
+  margin-bottom: 0;
+}
+
+h2 {
+  color: white;
+  padding-left: 20px;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  margin: 10px 10px 10px 0;
+  background-color: purple;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.row.button {
+  justify-content: right;
+}
