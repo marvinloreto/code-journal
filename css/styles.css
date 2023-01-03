@@ -17,6 +17,10 @@ h2 {
   padding-left: 20px;
 }
 
+h4 {
+  text-align: center;
+}
+
 label,
 input,
 textarea {
@@ -42,8 +46,16 @@ button {
   padding: 5px 10px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .row.button {
   justify-content: right;
+}
+
+.row.new {
+  justify-content: flex-end;
 }
 
 ul {
@@ -56,4 +68,15 @@ li {
 
 img.entry {
   object-fit: cover;
+}
+
+.hide {
+  display: none;
+}
+
+#navbar-entries {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 20px;
 }

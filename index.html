@@ -18,12 +18,12 @@
 <body>
   <header>
     <div class="container top">
-      <h2>Code Journal</h2>
+      <h2>Code Journal <a id="navbar-entries" href="#entriesDiv">Entries</a></h2>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form">
-      <form id="entry-form">
+    <div data-view="entry-form" id="entry-form" class="hidden">
+      <form id="form">
         <h1>New Entry</h1>
         <div class="row">
           <div class="column-half">
@@ -47,39 +47,22 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="view">
-      <ul>
-        <li>
-          <div class="container">
-            <div class="row">
-              <div class="column-half">
-                <img class="entry" src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/bdnkabiqxpxmxzmcaluz/spider-man-meme?fimg-ssr">
-              </div>
-              <div class="column-half">
-                <h3>Spider-Man Meme</h3>
-                <p>The Iconic Spider-Man that originally started with just two Spider-Men.</p>
-                <p>This meme was recreated during the movie Spider-Man: No Way Home</p>
-              </div>
-            </div>
+    <div data-view="entries" id="entriesDiv">
+      <div class="container">
+        <div class="row">
+          <div class="column-half">
+            <h1>Entries</h1>
           </div>
-        </li>
-        <li>
-          <div class="container">
-            <div class="row">
-              <div class="column-half">
-                <img class="entry"
-                  src="https://meccha-japan.com/273866-large_default/figure-king-mickey-mouse-kingdom-hearts-iii-bring-arts.jpg">
-              </div>
-              <div class="column-half">
-                <h3>King Mickey</h3>
-                <p>Mickey Mouse that appears in the game Kingdom Hearts 3.</p>
-                <p>This master keyblade-weilder is the king of Disney Castle</p>
-              </div>
-            </div>
-          </div>
-        </li>
+        </div>
+        <div class="row new">
+          <button class="new" id="new-button" type="submit">NEW</button>
+        </div>
+      </div>
+      <h4 id="no-entries">No Entries have been recorded.</h4>
+      <ul class="entry-list">
       </ul>
     </div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
