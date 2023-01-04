@@ -18,12 +18,12 @@
 <body>
   <header>
     <div class="container top">
-      <h2>Code Journal</h2>
+      <h2>Code Journal <a id="navbar-entries" href="#entriesDiv">Entries</a></h2>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form">
-      <form id="entry-form">
+    <div data-view="entry-form" id="entry-form" class="hidden">
+      <form id="form">
         <h1>New Entry</h1>
         <div class="row">
           <div class="column-half">
@@ -32,8 +32,8 @@
           <div class="column-half">
             <label for="title">Title</label>
             <input required name="title" type="text" id="title">
-            <label for="photo-URL">Photo URL</label>
-            <input required name="photo-URL" type="url" id="photo-URL">
+            <label for="photoURL">Photo URL</label>
+            <input required name="photoURL" type="url" id="photoURL">
           </div>
         </div>
         <div class="row">
@@ -47,7 +47,22 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="hidden"></div>
+    <div data-view="entries" id="entriesDiv">
+      <div class="container">
+        <div class="row">
+          <div class="column-half">
+            <h1>Entries</h1>
+          </div>
+        </div>
+        <div class="row new">
+          <button class="new" id="new-button" type="submit">NEW</button>
+        </div>
+      </div>
+      <h4 id="no-entries">No Entries have been recorded.</h4>
+      <ul class="entry-list">
+      </ul>
+    </div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
