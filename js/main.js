@@ -17,11 +17,14 @@ imageURL.addEventListener('input', getImage);
 
 function saveEntry(event) {
   event.preventDefault();
-  var entryData = new FormData(form);
-  var dataObject = Object.fromEntries(entryData);
-  dataObject.entryId = data.nextEntryId;
+  var entryData = {
+    title: form.elements.title.value,
+    photoURL: form.elements.photoURL.value,
+    notes: form.elements.notes.value
+  };
+  entryData.entryId = data.nextEntryId;
   data.nextEntryId++;
-  data.entries.push(dataObject);
+  data.entries.push(entryData);
   imageEntry.setAttribute('src', 'images/placeholder-image-square.jpg');
   form.reset();
 }
