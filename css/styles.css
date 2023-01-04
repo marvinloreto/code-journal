@@ -17,6 +17,11 @@ h2 {
   padding-left: 20px;
 }
 
+h3 {
+  display: flex;
+  justify-content: space-between;
+}
+
 h4 {
   text-align: center;
 }
@@ -46,7 +51,8 @@ button {
   padding: 5px 10px;
 }
 
-button:hover {
+button:hover,
+i:hover {
   cursor: pointer;
 }
 
