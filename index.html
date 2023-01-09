@@ -16,12 +16,26 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container top">
-      <h2>Code Journal <a id="navbar-entries" href="#entriesDiv">Entries</a></h2>
+  <div class="modal-background hidden">
+    <div class="modal">
+      <div class="modal-text">
+        <h4>Are you sure you want to delete this entry?</h4>
+      </div>
+      <div class="modal-row-button">
+        <button class="cancel" id="cancel">CANCEL</button>
+        <button class="confirm" id="confirm">CONFIRM</button>
+      </div>
     </div>
+  </div>
+  <header>
   </header>
+
   <main class="container">
+    <div class="container-top">
+      <div class="row-top">
+        <h2>Code Journal <a id="navbar-entries" href="#entriesDiv">Entries</a></h2>
+      </div>
+    </div>
     <div data-view="entry-form" id="entry-form" class="hidden">
       <form id="form">
         <h1>New Entry</h1>
@@ -43,6 +57,7 @@
           </div>
         </div>
         <div class="row button">
+          <button class="delete hide" id="delete">Delete Entry</button>
           <button id="save" type="submit">SAVE</button>
         </div>
       </form>
