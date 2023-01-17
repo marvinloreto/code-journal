@@ -9,6 +9,10 @@ var heading = document.querySelector('h1');
 var title = document.getElementById('title');
 var notes = document.getElementById('notes');
 
+var deleteButton = document.getElementById('delete');
+var cancelButton = document.getElementById('cancel');
+var confirmButton = document.getElementById('confirm');
+
 function getImage(event) {
   imageEntry.setAttribute('src', imageURL.value);
 }
@@ -53,6 +57,7 @@ function saveEntry(event) {
     editedLi.replaceWith(uneditedLi);
     data.editing = null;
     imageEntry.setAttribute('src', 'images/placeholder-image-square.jpg');
+    deleteButton.className = 'delete hide';
     form.reset();
     entriesView();
   }
@@ -173,8 +178,37 @@ function editEntries(event) {
     notes.value = data.editing.notes;
     imageEntry.setAttribute('src', data.editing.photoURL);
     heading.textContent = 'Edit Entry';
+    deleteButton.className = 'delete';
     viewSwap('entry-form');
   }
 }
 
 ul.addEventListener('click', editEntries);
+var modalBackground = document.querySelector('.modal-background');
+
+function deleteEntry(event) {
+  modalBackground.className = 'modal-background';
+}
+
+deleteButton.addEventListener('click', deleteEntry);
+
+function cancelDelete(event) {
+  modalBackground.className = 'modal-backgroun hidden';
+}
+
+cancelButton.addEventListener('click', cancelDelete);
+
+function confirmDelete(event) {
+  var entryId = confirmButton.getAttribute('data-entry-id');
+  var index = data.entries.findIndex(entry => entry.entryId === parseInt(entryId, 10));
+  data.entries.splice(index, 1);
+  if (data.entries.length === 0) {
+    toggleNoEntries(true);
+  } else {
+    toggleNoEntries(false);
+  }
+  cancelDelete();
+  viewSwap('entries');
+}
+
+confirmButton.addEventListener('click', confirmDelete);
